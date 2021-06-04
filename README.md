@@ -1,4 +1,4 @@
-# OmarEpic.crypto
+# Site
 !!!Url name subject to change!!!
 
 Website made by yours truly to be used as a project log and hopefully help me retain my new knowledge on web development.
