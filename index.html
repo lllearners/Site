@@ -19,11 +19,11 @@
                 var box = document.getElementById('boxToggle');
                 if (bigBox.style.display === "none") {
                     bigBox.style.display = "block";
-                    box.style.top = "280px";
+                    box.style.top = "28vh";
                 }
                 else {
                     bigBox.style.display = "none";
-                    box.style.top = "0px";
+                    box.style.top = "0";
                 }
             }
 
@@ -32,19 +32,21 @@
     <body>
         <p class="font fine-print">(The about me button only starts working on the second press. site is made for 1920x1080p desktop monitors.)</p>
         <h1 class="center font">lllearners Website</h1>
-        <div id="about-box" class="about-box">
-            <h1 class="center font">About Me</h1>
-            <p class="font">My name is Omar El-Baytam. I am a High-School student striving to become a programmer. 
-                My usual hobbies consist of anime, video games, and recently coding! 
-                From what I have tried, I enjoy web development and python coding. 
-                I believe, considering my hobbies, I will enjoy making videogames in the future. 
-                Coding can prove very difficult and as a beginner I have many places to improve. 
-                With my beginner knowledge I have created this website and will hopefully plaster it with my projects and creations as a great programmer.
-             </p>
+        <div>
+            <div id="about-box" class="about-box">
+                <h1 class="center font">About Me</h1>
+                <p class="font">My name is Omar El-Baytam. I am a High-School student striving to become a programmer. 
+                    My usual hobbies consist of anime, video games, and recently coding! 
+                    From what I have tried, I enjoy web development and python coding. 
+                    I believe, considering my hobbies, I will enjoy making videogames in the future. 
+                    Coding can prove very difficult and as a beginner I have many places to improve. 
+                    With my beginner knowledge I have created this website and will hopefully plaster it with my projects and creations as a great programmer.
+                </p>
+            </div>
+            <box id="boxToggle" class="font" onclick="boxAppear()">
+                About Me
+            </box>
         </div>
-        <box id="boxToggle" class="font" onclick="boxAppear()">
-            About Me
-        </box>
         <hr>
         <contents>
             <useful>
@@ -79,7 +81,7 @@
                 <hr>
 
                 <project id="Website">
-                    <h2 class="font">Website (OmarEpic.crypto)</h2>
+                    <h2 class="font">Website</h2>
                     <img class="proj-img"src="assets\proj-web\website.png">
                     <p class="font proj-text">
                         I'm making a website as a representation of me and my works.
