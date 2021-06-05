@@ -26,11 +26,68 @@
                     box.style.top = "0";
                 }
             }
+            var pin1 = 0;
+            var pin2 = 0;
+            var pin3 = 0;
+
+            function lock(pin) {
+                
+                //pin variables all change to unlock the lock, if the wrong pin is pushed, all pins will reset and need to be redone.
+                switch (pin) {
+                    case 1 :
+                        if (pin2 == 1) {
+                            pin2 = 0;
+                            pin3 = 0;
+                        }
+                        pin1 = 1;
+                        console.log(pin1, pin2, pin3)
+                        break
+                    case 2 : 
+                        if (pin1 == 1) {
+                            pin2 = 1;
+                        }
+                        else if (pin2 == 1) {
+                            pin1 = 0;
+                            pin2 = 0;
+                            pin3 = 0;
+                        }
+                        console.log(pin1, pin2, pin3)
+                        break
+                    case 3 : 
+                        if (pin2 == 1) {
+                            pin3 = 1;
+                        }
+                        else if (pin3 == 1) {
+                            pin1 = 0;
+                            pin2 = 0;
+                            pin3 = 0;
+                        }
+                        console.log(pin1, pin2, pin3)
+                        break
+                    case 4 : 
+                        if (pin3 == 1) {
+                            document.documentElement.style.setProperty('--color-text','red');
+                            document.documentElement.style.setProperty('--font','Garamond, serif');
+                            document.documentElement.style.setProperty('--color-bg','rgb(32, 32, 32)');
+                            document.documentElement.style.setProperty('--color-bg2','black');
+                            document.documentElement.style.setProperty('--color-thumb','violet');
+                            document.documentElement.style.setProperty('--color-thumb-hover','purple');
+                            document.documentElement.style.setProperty('--border-color','violet');
+                        }
+                        else {
+                            pin1 = 0;
+                            pin2 = 0;
+                            pin3 = 0;
+                        }
+                        console.log(pin1, pin2, pin3)
+                        break
+                }
+            }
+            
 
         </script>
     </head>
     <body>
-        <p class="font fine-print">(The about me button only starts working on the second press. site is made for 1920x1080p desktop monitors.)</p>
         <h1 class="center font">lllearners Website</h1>
         <div>
             <div id="about-box" class="about-box">
@@ -47,7 +104,7 @@
                 About Me
             </box>
         </div>
-        <hr>
+        <hr onclick="lock(1)">
         <contents>
             <useful>
                 <accounts>
@@ -59,13 +116,13 @@
                     </block>
                 </accounts>
                 <hobbies class="nav1">
-                    <p class="font nav">Current Hobbies</p>
+                    <p class="font nav1">Current Hobbies</p>
                     <block>
                         <a class="link" target="_blank" href="https://marble.cards/collection/overview/0x17362a8Bc1F06B384ae202496BE07ba68c5B53b8">marble cards</a>
                     </block>
                 </hobbies>
             </useful>
-            <hr>
+            <hr onclick="lock(3)">
             <column1>
                 
                 <h1 class="font">Projects</h1>
@@ -74,11 +131,7 @@
                     <li><a class="link" href="#MBCCalc">MBC Calculator</a>
                 </ul>
 
-                <project>
-                    <h2 class="font"></h2>
-                </project>
-
-                <hr>
+                <hr onclick="lock(4)">
 
                 <project id="Website">
                     <h2 class="font">Website</h2>
@@ -93,7 +146,7 @@
                     </p>
                 </project>
 
-                <hr>
+                <hr onclick="lock(2)">
 
                 <project id="MBCCalc">
                     <h2 class="font">MBC Calculator</h2>
